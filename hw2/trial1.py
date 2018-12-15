@@ -3,7 +3,7 @@
 """
 Created on Fri Dec 14 07:02:17 2018
 
-@author: ailab
+@author: loveAlakazam
 """
 
 import tensorflow as tf
@@ -44,9 +44,6 @@ X=tf.placeholder(tf.float32, [None,32,32,1]) #(None, 32*32)
 Y=tf.placeholder(tf.float32, [None,10])
 
 # conv-relu-pool layer1
-#kernel_num=32
-#kernel_num2=kernel_num1*2
-
 W1= tf.Variable(tf.random_normal([5,5,1,32], stddev=0.01))
 h_conv1 = tf.nn.conv2d( X, W1, strides=[1,1,1,1],padding='SAME') #(None,32,32,32)
 h_conv_relu1=tf.nn.relu(h_conv1)
